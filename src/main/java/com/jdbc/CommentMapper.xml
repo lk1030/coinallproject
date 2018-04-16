@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="CommentMapper">
+
+	 <insert id="writeComment" parameterType="CommentDTO">
+        INSERT INTO comments(COMMENT_NUMBER,id,COMMENT_CONTENT,num)
+             VALUES (comment_seq.nextval
+                     , #{id}
+                     , #{COMMENT_CONTENT}
+                     
+                     , #{num})
+    </insert>
+    
+    <select id="readComments" parameterType="HashMap" resultType="CommentDTO">
+        SELECT id, COMMENT_CONTENT, to_char(COMMENT_DATE,'YYYY/MM/DD') COMMENT_DATE, num
+        from comments
+        where num = #{num}
+        order by num desc
+        
+    </select>
+    
+   
+
+
+</mapper>

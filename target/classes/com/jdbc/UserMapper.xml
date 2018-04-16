@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="UserMapper">
+
+		<!--  개인정보 수정 -->
+	<update id="userupdate" parameterType="UserDTO">
+	 update users
+	 set id = #{id},pw = #{pw},name = #{name},ph1 = #{ph1},ph2 = #{ph2},ph3 = #{ph3},addr1 = #{addr1},addr2 = #{addr2},addr3 = #{addr3},email = #{email},email2 = #{email2},bank1 = #{bank1},bank2 = #{bank2},bpw = #{bpw}
+	 where id = #{id}
+	</update>
+
+	<!-- 계좌 잔액조정 -->
+	<update id="bankup" parameterType="CashDTO">
+	 update bankacc
+	 set id = #{id},money = #{money}
+	 where id = #{id}
+	</update>
+
+	<!-- 계좌 잔액 체크 -->
+	<select id="bankselect" parameterType="string" resultType="int">
+     select money
+     from bankacc
+     where id = #{id}
+  </select>	
+
+	<!-- 회원가입 계좌 등록 -->
+  <insert id="useraddbank" parameterType="BankDTO">
+   insert into bankacc (id,money)
+   values( #{id},#{money})
+  </insert>
+
+	<!-- 캐시충전시 금액이 0인지 체크 -->
+	<select id="cashselect" parameterType="string" resultType="int">
+     select cmoney
+     from cash
+     where id = #{id}
+  </select>	
+
+		<!--  캐시충전 -->
+	<update id="cashup" parameterType="CashDTO">
+	 update cash
+	 set id = #{id},cmoney = #{cmoney}
+	 where id = #{id}
+	</update>
+
+	<!-- 회원가입 캐시 등록 -->
+  <insert id="useraddcash" parameterType="CashDTO">
+   insert into cash (id,cmoney)
+   values( #{id},#{cmoney})
+  </insert>
+
+	<!-- 회원가입 -->
+  <insert id="useradd" parameterType="UserDTO">
+   insert into users (id,pw,name,ph1
+       ,ph2,ph3,addr1,addr2,addr3,email,email2,bank1,bank2,bpw)
+   values( #{id},#{pw},#{name},
+           #{ph1},#{ph2},#{ph3},
+           #{addr1},#{addr2},#{addr3},
+           #{email},#{email2},#{bank1},#{bank2},#{bpw})
+  </insert>
+
+<!-- 로그인 -->
+	<select id="login" parameterType="hashmap" resultType="UserDTO">
+	select id,pw,name,ph1,ph2,ph3,addr1,addr2,addr3,email,email2,bank1,bank2,bpw
+	from users
+	where id = #{id} and pw = #{pw}
+	</select>
+	
+<!-- 아이디 찾기 -->
+	<select id="searchId" parameterType="hashmap" resultType="UserDTO">
+	select id
+	from users
+	where name = #{name} and ph1 = #{ph1} and ph2 = #{ph2} and ph3 = #{ph3}
+	</select>
+	
+<!-- 비밀번호 찾기 -->
+	<select id="searchPw" parameterType="hashmap" resultType="UserDTO">
+	select pw
+	from users
+	where id = #{id} and ph1 = #{ph1} and ph2 = #{ph2} and ph3 = #{ph3} and bank2 = #{bank}
+	</select>	
+
+<!-- 아이디체크 -->
+  <select id="memberIdCheck" parameterType="string" resultType="int">
+     select count(*)
+     from users
+     where id = #{id}
+  </select>	
+
+
+
+</mapper>
+
+
+

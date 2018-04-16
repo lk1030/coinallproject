@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:default-servlet-handler/>
+	
+	<mvc:view-controller path="/" view-name="main"/>
+	
+	<mvc:view-controller path="/recruitment" view-name="mypage/recruitment"/>
+		
+	<mvc:view-controller path="/situation" view-name="mypage/situation"/>
+		
+	<mvc:view-controller path="/recharge" view-name="mypage/recharge"/>
+	
+	<mvc:view-controller path="/refund" view-name="mypage/refund"/>
+	
+	<mvc:view-controller path="/login" view-name="login"/>
+	
+    <mvc:view-controller path="/chart" view-name="chart/chart"/>
+    
+    <mvc:view-controller path="/alphacoin" view-name="chart/alphacoin"/>
+    
+    <mvc:view-controller path="/betacoin" view-name="chart/betacoin"/>
+    
+    <mvc:view-controller path="/chariecoin" view-name="chart/chariecoin"/>
+    
+    <mvc:view-controller path="/search" view-name="search"/>
+<!--     
+    <mvc:view-controller path="/searchId" view-name="searchId"/>
+     
+    <mvc:view-controller path="/searchPw" view-name="searchPw"/> -->
+    
+    <mvc:view-controller path="/pageA" view-name="pageA"/>
+    
+    <mvc:view-controller path="/pageB" view-name="pageB"/>
+    
+    <mvc:view-controller path="/hello" view-name="hello"/>
+	
+	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />
+	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
+    
+    <mvc:view-controller path="/kakao" view-name="kakao"/>
+    <mvc:view-controller path="/list" view-name="list"/>
+	<mvc:view-controller path="/clist" view-name="clist"/>
+	<mvc:view-controller path="/writeUI" view-name="write"/>
+	
+	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />
+		
+		<bean id="view" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/WEB-INF/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>	
+	<context:annotation-config></context:annotation-config>	
+	<context:component-scan base-package="com.*" ></context:component-scan>	
+	
+</beans>
+
