@@ -22,6 +22,7 @@
 <value>classpath:com/jdbc/UserMapper.xml</value>
 <value>classpath:com/jdbc/BoardMapper.xml</value>
 <value>classpath:com/jdbc/CommentMapper.xml</value>
+<value>classpath:com/jdbc/CoinMapper.xml</value>
 </list>
 </property> 
 <property name="dataSource" ref="dataSource"></property>
@@ -35,6 +36,7 @@
 <value>com.dto.UserDTO</value>
 <value>com.dto.CommentDTO</value>
 <value>com.dto.PrchDTO</value>
+<!-- <value>com.dto.CoinDTO</value> -->
 </list>
 </property>
 </bean>
