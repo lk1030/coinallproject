@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.service.CoinService;
 
 @Controller
-public class CoinContreller {
+public class CoinController {
 
 	@Autowired
 	CoinService service;
