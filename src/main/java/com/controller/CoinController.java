@@ -31,7 +31,6 @@ public class CoinController {
 		
 		if(bitcount >=30){
 			service.bitonedelete();
-		}else if(bitcount <30) {
 			service.bitinsert(bit);
 		}
 		

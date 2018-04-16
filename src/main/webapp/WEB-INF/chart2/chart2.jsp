@@ -16,7 +16,7 @@ $(document).ready(function(){
 	        type: "get",
 	        url: "Bit",
 	        dataType:"text",
-	        //async: false,
+	       // async: false,
 	        
 	        success:function(data,status,xhr){
 	        	console.log(data);
@@ -28,7 +28,7 @@ $(document).ready(function(){
 	   }); //end ajax
 	
 	
-	} ,500); //end setInterval
+	} ,3000); //end setInterval
 });	//end ready
 
 </script>
