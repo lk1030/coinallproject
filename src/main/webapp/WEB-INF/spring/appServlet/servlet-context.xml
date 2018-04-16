@@ -55,7 +55,7 @@
     <mvc:view-controller path="/olist" view-name="olist"/>
 	<mvc:view-controller path="/clist" view-name="clist"/>
 	<mvc:view-controller path="/writeUI" view-name="write"/>
-	<mvc:view-controller path="/onewrite" view-name="onewrite"/>
+	<mvc:view-controller path="/onewriteUI" view-name="onewrite"/>
 	
 	
 	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />

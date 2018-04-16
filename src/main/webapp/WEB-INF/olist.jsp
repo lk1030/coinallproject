@@ -24,7 +24,7 @@
  </tr>
  <c:set var="OneDTO" value="${OneDTO}" />
 <c:forEach var="OneDTO" items="${OneDTO.olist}" varStatus="status">
-
+<c:if test="${OneDTO.id == login.id}">
  <tr>
   <td>${OneDTO.num}</td>
   <td><a href="oneread?num=${OneDTO.num}">${OneDTO.title}</a></td>
@@ -32,10 +32,10 @@
   <td>${OneDTO.writeday}</td>
   <td>${OneDTO.situation}</td>
  </tr>
-
+</c:if>
 </c:forEach>
   
-<a href="onewrite">글쓰기</a>
+<a href="onewriteUI">글쓰기</a>
 </table>
 </body>
 </html>
