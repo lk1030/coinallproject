@@ -29,9 +29,10 @@ public class CoinController {
 		
 		int bitcount = service.bitCount();
 		
-		if(bitcount <=30) {
-		service.bitinsert(bit);
-		
+		if(bitcount >=30){
+			service.bitonedelete();
+		}else if(bitcount <30) {
+			service.bitinsert(bit);
 		}
 		
 		return bit;

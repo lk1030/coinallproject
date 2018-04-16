@@ -11,10 +11,12 @@ $(document).ready(function(){
 	
 	setInterval(function(){
 		
+		
 		$.ajax({                  
 	        type: "get",
 	        url: "Bit",
 	        dataType:"text",
+	        //async: false,
 	        
 	        success:function(data,status,xhr){
 	        	console.log(data);

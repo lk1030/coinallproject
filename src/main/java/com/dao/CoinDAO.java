@@ -18,6 +18,9 @@ public class CoinDAO {
 		return template.selectOne("CoinMapper.bitCount");
 	}
 	
+	public void bitonedelete() {
+		 template.delete("CoinMapper.bitonedelete");
+	}
 	
 	
 }

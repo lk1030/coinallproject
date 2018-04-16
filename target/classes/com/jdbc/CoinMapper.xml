@@ -13,6 +13,14 @@
      select count(*)
      from bit
     </select>
+    
+ 	<delete id="bitonedelete">
+ 	<![CDATA[
+   	 delete from bit 
+   	 where rownum <=1
+   	]]> 
+    </delete>   
+    
 
 
 </mapper>

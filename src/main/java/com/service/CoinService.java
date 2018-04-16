@@ -18,4 +18,8 @@ public class CoinService {
 	public int bitCount() {
 		return dao.bitCount();
 	}
+	
+	public void bitonedelete() {
+		dao.bitonedelete();
+	}
 }
