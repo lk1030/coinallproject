@@ -52,8 +52,11 @@
     
     <mvc:view-controller path="/kakao" view-name="kakao"/>
     <mvc:view-controller path="/list" view-name="list"/>
+    <mvc:view-controller path="/olist" view-name="olist"/>
 	<mvc:view-controller path="/clist" view-name="clist"/>
 	<mvc:view-controller path="/writeUI" view-name="write"/>
+	<mvc:view-controller path="/onewrite" view-name="onewrite"/>
+	
 	
 	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />
 		

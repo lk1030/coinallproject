@@ -16,6 +16,9 @@
 	   </if>
 	   order by pos desc, num desc
 	</select>
+	
+	
+	
     <select id="totalCount" resultType="int">
      select count(*)
      from myboard
@@ -35,6 +38,8 @@
        insert into myboard( num, title, id, content, pos , depth)
        values( myboard_seq.nextval, #{title},#{id},#{content},#{pos}, #{depth} )
     </insert>
+    
+    
     
     
     
@@ -73,6 +78,8 @@
 	   from myboard
 	   where num = #{num}
 	</select>
+	
+	
 	
 	<!-- <select id="boardSearch" parameterType="hashmap" 
 	resultType="MyBoardDTO">

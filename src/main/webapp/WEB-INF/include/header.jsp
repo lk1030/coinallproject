@@ -57,7 +57,7 @@
           <ul class="dropdown-menu">
             <li><a href="list">게시판</a></li>
             <c:if test="${login.id != 'admin'}">
-            <li><a href="#">1:1문의</a></li>
+            <li><a href="olist">1:1문의</a></li>
             </c:if>
             <c:if test="${login.id == 'admin'}">
             <li><a href="#">1:1답변</a></li>
