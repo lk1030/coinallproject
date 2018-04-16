@@ -8,27 +8,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <style>
-.loginbtn {
-	margin: 10px 0;
-	width:40%;
-	height: 30px;
-	border : 1px solid #12418c;
-	border-radius: 15px;
-	color: #12418c;
-	background-color: transparent;
-	font-weight: bold;
-}
 
-.loginbtn:hover {
-	/* margin: 10px 0;
-	width:20%;
-	height: 30px;
-	border : 1px solid #12418c;
-	border-radius: 15px; */
-	color: #ffffff;
-	background-color: #12418c;
-	/* font-weight: bold; */
-}
 
 </style>
 <!-- 로그인, 로그아웃 버튼 -->

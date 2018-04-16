@@ -25,7 +25,7 @@
    <link rel="stylesheet" type="text/css" href="css/style.css">
    <title>Insert title here</title>
 <style>
-   .hm-gradient {
+ .hm-gradient {
     background-image: linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
 }
 .darken-grey-text {
@@ -63,24 +63,36 @@
 	margin: 0 auto;
 }
 
-	.h2{
-	color: 12418c !important;
+	.py-3 text-center font-bold font-up blue-text{
+	/* color: 12418c!important;
     float:right;
-    margin-bottom: 30px !important;
+    margin-bottom: 30px !important; */
     /* text-align: -webkit-right ; */
 
     }
     
     .text-center {
     text-align: -webkit-right !important;
+    color: 12418c !important;
+    margin-bottom: 30px !important;
 }
 
 
 .form {
-	float:right;
+	float:right;	
 }
 td {
 	padding: 0;
+}
+
+.pagination{
+	display: inline-flex !important;
+	padding: auto !important;
+	border-radius: 0;
+}
+.search {
+	float:right;
+	margin-bottom: 30px;
 }
 
   </style>
@@ -177,6 +189,7 @@ td {
                     <div class="d-flex justify-content-center">
                         <!--Pagination -->
                         <nav class="my-4 pt-2">
+                        <center>
                             <ul class="pagination pagination-circle pg-blue mb-0">
                                 <!--First-->
                                 <li class="page-item disabled clearfix d-none d-md-block"><a class="page-link">First</a></li>
@@ -203,6 +216,7 @@ td {
                                 <!--First-->
                                 <li class="page-item clearfix d-none d-md-block"><a class="page-link">Last</a></li>
                             </ul>
+                            </center>
                         </nav>
                         <!--/Pagination -->
                     </div>
