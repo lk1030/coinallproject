@@ -60,7 +60,7 @@
             <li><a href="olist">1:1문의</a></li>
             </c:if>
             <c:if test="${login.id == 'admin'}">
-            <li><a href="#">1:1답변</a></li>
+            <li><a href="olist">1:1답변</a></li>
             </c:if>
             <li><a href="#">menu3</a></li>           
             <li><a href="#">menu4</a></li> 

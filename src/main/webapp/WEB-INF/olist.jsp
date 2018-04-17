@@ -20,19 +20,40 @@
   <td>제목</td>
   <td>작성자</td>
   <td>작성일</td>
-  <td>조회수</td>
+  <td>답변상태</td>
  </tr>
  <c:set var="OneDTO" value="${OneDTO}" />
 <c:forEach var="OneDTO" items="${OneDTO.olist}" varStatus="status">
-<c:if test="${OneDTO.id == login.id}">
+<c:choose>
+<c:when test="${login.id == OneDTO.id}">
  <tr>
   <td>${OneDTO.num}</td>
   <td><a href="oneread?num=${OneDTO.num}">${OneDTO.title}</a></td>
   <td>${OneDTO.id}</td>
   <td>${OneDTO.writeday}</td>
-  <td>${OneDTO.situation}</td>
+  <c:if test="${OneDTO.situation == 0}">
+  <td>답변대기</td>
+  </c:if>
+  <c:if test="${OneDTO.situation == 1}">
+  <td>답변완료</td>
+  </c:if>
  </tr>
-</c:if>
+</c:when>
+
+<c:when test="${login.id == 'admin'}">
+ <tr>
+ <c:if test="${OneDTO.situation == 0}">
+  <td>${OneDTO.num}</td>
+  <td><a href="oneread?num=${OneDTO.num}">${OneDTO.title}</a></td>
+  <td>${OneDTO.id}</td>
+  <td>${OneDTO.writeday}</td>
+  <td>답변대기</td>
+  </c:if>
+  
+ </tr>
+</c:when>
+
+</c:choose>
 </c:forEach>
   
 <a href="onewriteUI">글쓰기</a>

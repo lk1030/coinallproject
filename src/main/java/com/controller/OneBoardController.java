@@ -43,7 +43,11 @@ public class OneBoardController {
 		return  "redirect:olist";
 	}
 	
-	
+	@RequestMapping(value="/onereply" , method=RequestMethod.POST)
+	public String onereply(OneBoardDTO dto) {
+		service.onereply(dto);
+		return  "redirect:olist";
+	}
 	
 	
 	

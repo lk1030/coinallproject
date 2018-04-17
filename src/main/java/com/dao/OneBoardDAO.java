@@ -36,6 +36,9 @@ public class OneBoardDAO {
      public void onewrite(OneBoardDTO dto) {
 		template.insert("OneBoardMapper.oneboardInsert",dto);
 	} 
+     public void onereply(OneBoardDTO dto) {
+    	 template.update("OneBoardMapper.oneboardreplyInsert",dto);
+ 	} 
     
      public OneBoardDTO oneread(int num) {
     	return template.selectOne("OneBoardMapper.oneboardRead", num);

@@ -18,10 +18,18 @@
        values( oneboard_seq.nextval, #{title},#{id},#{content},#{situation} )
     </insert>
     
+    <update id="oneboardreplyInsert" parameterType="OneBoardDTO">
+       update oneboard
+       set reply = #{reply}, situation = 1
+       
+       where num = #{num}
+       
+    </update>
+    
 	
 	<select id="oneboardRead"  parameterType="int"  resultType="OneBoardDTO">
 	   select num,title,id, content, to_char(writeday,'YYYY/MM/DD') writeday,
-	    situation
+	    situation, reply
 	   from oneboard
 	   where num = #{num}
 	</select>

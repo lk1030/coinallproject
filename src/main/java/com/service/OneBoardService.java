@@ -28,6 +28,10 @@ public class OneBoardService {
 		dao.onewrite(dto);
 	}
 	
+	public void onereply(OneBoardDTO dto) {
+		dao.onereply(dto);
+	}
+	
 	public OneBoardDTO oneread(int num) {
 		 return dao.oneread(num);
 		}
