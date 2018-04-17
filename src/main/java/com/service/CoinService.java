@@ -11,15 +11,32 @@ public class CoinService {
 	@Autowired
 	CoinDAO dao;
 	
-	public void bitinsert(String bit) {
-		dao.bitinsert(bit);
+	public void bitinsert(int num,String bit) {
+		dao.bitinsert(num,bit);
 	}
 	
 	public int bitCount() {
 		return dao.bitCount();
 	}
-	
-	public void bitonedelete() {
-		dao.bitonedelete();
+		
+	public void bitnuminsert(int num) {
+		dao.bitnuminsert(num);
 	}
+	
+	public int bitnumcount() {
+		return dao.bitnumcount();
+	}
+	
+	public void bitoneupdate() {
+		dao.bitoneupdate();
+	}
+	
+	public void bitallupdate(int num) {
+		dao.bitallupdate(num);
+	}
+	
+	public int selectnotnull(int num) {
+		return dao.selectnotnull(num);
+	}
+
 }
