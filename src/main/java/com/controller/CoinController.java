@@ -20,7 +20,7 @@ public class CoinController {
 	CoinService service;
 	
 	@RequestMapping("/Bit")
-	public @ResponseBody String Bit(HttpSession session,HashMap<String,Integer> map,HashMap<String,String> map2){
+	public @ResponseBody String Bit(HttpSession session,HashMap<String,String> map){
 		
 		Random ran = new Random();
 		
@@ -46,12 +46,14 @@ public class CoinController {
 			for(int num=1;num<30;num++) {
 				
 				if(count != 1) {
-				service.selectnotnull(num);
+				int nulls = service.selectnotnull(num);
 				
-				map.put("num", num);
-				map2.put("bit", bit);
+				if(String.valueOf(nulls)==null) {
+				map.put("num",String.valueOf(num));
+				map.put("bit",bit);
 				
-				service.bitinsert(num,bit);	
+				service.bitinsert(map);	
+				}
 				count = count+1;
 				}
 			}
@@ -61,9 +63,12 @@ public class CoinController {
 			
 			for(int i=1;i<29;i++) {
 				service.bitallupdate(i);		
-			}
-			
+			}	
 			service.bitoneupdate();
+			int num=30;
+			map.put("num",String.valueOf(num));
+			map.put("bit",bit);
+			service.bitinsert(map);	
 		}else {
 			service.bitoneupdate();
 			

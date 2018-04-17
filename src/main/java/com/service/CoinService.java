@@ -1,5 +1,7 @@
 package com.service;
 
+import java.util.HashMap;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,8 +13,8 @@ public class CoinService {
 	@Autowired
 	CoinDAO dao;
 	
-	public void bitinsert(int num,String bit) {
-		dao.bitinsert(num,bit);
+	public void bitinsert(HashMap<String, String> map) {
+		dao.bitinsert(map);
 	}
 	
 	public int bitCount() {
