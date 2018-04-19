@@ -1,6 +1,7 @@
 package com.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Random;
 
 import javax.servlet.http.HttpSession;
@@ -20,16 +21,12 @@ public class CoinController {
 	CoinService service;
 	
 	@RequestMapping("/Bit")
-	public @ResponseBody String Bit(HttpSession session,HashMap<String,String> map){
+	public @ResponseBody List<Integer> Bit(HttpSession session,HashMap<String,Integer> map){
 		
 		Random ran = new Random();
-		
-		int count = 0;
-		
-		int bit_ =ran.nextInt(15000)+10000;
-		
-		String bit = String.valueOf(bit_);
-		
+	
+		int bit =ran.nextInt(15000)+10000;
+
 		int bitnumcount = service.bitnumcount();
 		
 		//코인 넘버를 설정하는 코드
@@ -38,48 +35,37 @@ public class CoinController {
 				service.bitnuminsert(i);
 			}
 		}
+
+		//bit값을 num순으로 대조하여 bit가 null인것부터 순서대로 값 삽입		
+		int num = service.bitCount();
+		
+		if(num <31) {		
+			map.put("num", num+1);
+			map.put("bit", bit);		
+			service.bitinsert(map);
+		}
+		
+		//총 bit가 30개가 되면 1번을 삭제하고 2번이 올라가고 반복하다가 30을 삭제하고 새로운 값을 넣는다. 
+		if(num ==30) {
 			
-		int bitcount = service.bitCount();
-		
-		if(bitcount <31) {
-		
-			for(int num=1;num<30;num++) {
-				
-				if(count != 1) {
-				int nulls = service.selectnotnull(num);
-				
-				if(String.valueOf(nulls)==null) {
-				map.put("num",String.valueOf(num));
-				map.put("bit",bit);
-				
-				service.bitinsert(map);	
-				}
-				count = count+1;
-				}
+			for(int i=1;i<30;i++) {
+				service.bitallupdate(i);
 			}
 			
-			
-			
-			
-			for(int i=1;i<29;i++) {
-				service.bitallupdate(i);		
-			}	
-			service.bitoneupdate();
-			int num=30;
-			map.put("num",String.valueOf(num));
-			map.put("bit",bit);
-			service.bitinsert(map);	
-		}else {
 			service.bitoneupdate();
 			
-
+			map.put("num", 30);
+			map.put("bit", bit);		
+			service.bitinsert(map);
 			
 		}
 		
+		List<Integer> list = service.selectbit();
+		
 			
 			
-		return bit;
-	}
+		return list;
+	}//end Bit
 	
 	
 	

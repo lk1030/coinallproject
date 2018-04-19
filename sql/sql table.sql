@@ -141,5 +141,5 @@ INCREMENT BY 1;
 
 
 CREATE TABLE bit
-(num NUMBER(20),
-bit VARCHAR2(20));
+(num NUMBER(38),
+bit NUMBER(38));

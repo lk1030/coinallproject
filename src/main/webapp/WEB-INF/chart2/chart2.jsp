@@ -7,28 +7,43 @@
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 <script>
+
 $(document).ready(function(){
+
+	var bitcoin= [];
+	var bitbyun = 0;
 	
 	setInterval(function(){
-		
+		var bitsum = 0;
 		
 		$.ajax({                  
 	        type: "get",
 	        url: "Bit",
-	        dataType:"text",
-	       // async: false,
+	        dataType:"json",
+	       //async: false,
 	        
 	        success:function(data,status,xhr){
-	        	console.log(data);
+	        	
+	        	for(var i=0;i<30;i++){
+	        		bitcoin[i]=parseInt(data[i]);
+	        		bitsum+=parseInt(data[i]);
+	        		}
+	        	$("#bit30").text(bitcoin[29]);
+	        	$("#bitsum").text(bitsum);
+	        	
+	        	bitbyun = parseInt(bitcoin[29])-parseInt(bitcoin[28]);
+	        	$("#bitbyun").text(bitbyun+"%");
 	        	
 	        }, //end success
 	        error: function(xhr,status,e){
 	              console.log("alphacoin 에러");
 	        }
 	   }); //end ajax
-	
-	
+	   
 	} ,3000); //end setInterval
+	
+	
+	
 });	//end ready
 
 </script>
@@ -81,9 +96,9 @@ table td{
  <!-- 비트코인 -->
  <tr>
  <td><img src="img/a.JPG" border="0" align="center" width="80" /></td>
- <td> </td>
- <td> </td>
- <td> </td>
+ <td><span id ="bitsum"></span></td>
+ <td><span id ="bit30"></span> </td>
+ <td><span id ="bitbyun"></span></td>
  <td> </td>
  </tr>
  
