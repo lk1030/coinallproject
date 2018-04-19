@@ -143,3 +143,39 @@ INCREMENT BY 1;
 CREATE TABLE bit
 (num NUMBER(38),
 bit NUMBER(38));
+
+CREATE TABLE two
+(num NUMBER(38),
+two NUMBER(38));
+
+CREATE TABLE three
+(num NUMBER(38),
+three NUMBER(38));
+
+CREATE TABLE four
+(num NUMBER(38),
+four NUMBER(38));
+
+CREATE TABLE five
+(num NUMBER(38),
+five NUMBER(38));
+
+CREATE TABLE six
+(num NUMBER(38),
+six NUMBER(38));
+
+CREATE TABLE seven
+(num NUMBER(38),
+seven NUMBER(38));
+
+CREATE TABLE eight
+(num NUMBER(38),
+eight NUMBER(38));
+
+CREATE TABLE nine
+(num NUMBER(38),
+nine NUMBER(38));
+
+CREATE TABLE ten
+(num NUMBER(38),
+ten NUMBER(38));

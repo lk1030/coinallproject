@@ -4,6 +4,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="CoinMapper">
 
+<!-- bit -->
 	<update id="bitInsert" parameterType="hashmap">
  	update bit
 	set bit = #{bit}
@@ -41,6 +42,368 @@
      select bit
      from bit
   </select>
+ <!-- end bit --> 
   
+  <!-- two -->
+	<update id="twoInsert" parameterType="hashmap">
+ 	update two
+	set two = #{two}
+	where num = #{num}
+    </update>
+
+	<select id="twoCount" resultType="int">
+     select count(two)
+     from two
+    </select>
+     
+	<insert id="twoNumInsert" parameterType="int">
+       insert into two(num)
+       values(#{num})
+    </insert>
+    
+	<select id="twoNumCount" resultType="int">
+     select count(num)
+     from two
+    </select>
+    
+    <update id="twooneupdate">
+    update two
+	set two =null
+	where num = 30
+    </update>
+   
+    <update id="twoallupdate" parameterType="int">
+	update two
+	set two =(select two from two where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selecttwo" resultType="int">
+     select two
+     from two
+  </select>
+ <!-- end Two --> 
+ 
+ <!-- three -->
+	<update id="threeInsert" parameterType="hashmap">
+ 	update three
+	set three = #{three}
+	where num = #{num}
+    </update>
+
+	<select id="threeCount" resultType="int">
+     select count(three)
+     from three
+    </select>
+     
+	<insert id="threeNumInsert" parameterType="int">
+       insert into three(num)
+       values(#{num})
+    </insert>
+    
+	<select id="threeNumCount" resultType="int">
+     select count(num)
+     from three
+    </select>
+    
+    <update id="threeoneupdate">
+    update three
+	set three =null
+	where num = 30
+    </update>
+   
+    <update id="threeallupdate" parameterType="int">
+	update three
+	set three =(select three from three where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selectthree" resultType="int">
+     select three
+     from three
+  </select>
+
+ <!-- end Three --> 
+ 
+ <!-- four -->
+	<update id="fourInsert" parameterType="hashmap">
+ 	update four
+	set four = #{four}
+	where num = #{num}
+    </update>
+
+	<select id="fourCount" resultType="int">
+     select count(four)
+     from four
+    </select>
+     
+	<insert id="fourNumInsert" parameterType="int">
+       insert into four(num)
+       values(#{num})
+    </insert>
+    
+	<select id="fourNumCount" resultType="int">
+     select count(num)
+     from four
+    </select>
+    
+    <update id="fouroneupdate">
+    update four
+	set four =null
+	where num = 30
+    </update>
+   
+    <update id="fourallupdate" parameterType="int">
+	update four
+	set four =(select four from four where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selectfour" resultType="int">
+     select four
+     from four
+  </select>
+ <!-- end Four --> 
+ 
+ <!-- five -->
+	<update id="fiveInsert" parameterType="hashmap">
+ 	update five
+	set five = #{five}
+	where num = #{num}
+    </update>
+
+	<select id="fiveCount" resultType="int">
+     select count(five)
+     from five
+    </select>
+     
+	<insert id="fiveNumInsert" parameterType="int">
+       insert into five(num)
+       values(#{num})
+    </insert>
+    
+	<select id="fiveNumCount" resultType="int">
+     select count(num)
+     from five
+    </select>
+    
+    <update id="fiveoneupdate">
+    update five
+	set five =null
+	where num = 30
+    </update>
+   
+    <update id="fiveallupdate" parameterType="int">
+	update five
+	set five =(select five from five where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selectfive" resultType="int">
+     select five
+     from five
+  </select>
+ <!-- end Five --> 
+ 
+ <!-- six -->
+	<update id="sixInsert" parameterType="hashmap">
+ 	update six
+	set six = #{six}
+	where num = #{num}
+    </update>
+
+	<select id="sixCount" resultType="int">
+     select count(six)
+     from six
+    </select>
+     
+	<insert id="sixNumInsert" parameterType="int">
+       insert into six(num)
+       values(#{num})
+    </insert>
+    
+	<select id="sixNumCount" resultType="int">
+     select count(num)
+     from six
+    </select>
+    
+    <update id="sixoneupdate">
+    update six
+	set six =null
+	where num = 30
+    </update>
+   
+    <update id="sixallupdate" parameterType="int">
+	update six
+	set six =(select six from six where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selectsix" resultType="int">
+     select six
+     from six
+  </select>
+ <!-- end Six --> 
+ 
+ <!-- seven -->
+	<update id="sevenInsert" parameterType="hashmap">
+ 	update seven
+	set seven = #{seven}
+	where num = #{num}
+    </update>
+
+	<select id="sevenCount" resultType="int">
+     select count(seven)
+     from seven
+    </select>
+     
+	<insert id="sevenNumInsert" parameterType="int">
+       insert into seven(num)
+       values(#{num})
+    </insert>
+    
+	<select id="sevenNumCount" resultType="int">
+     select count(num)
+     from seven
+    </select>
+    
+    <update id="sevenoneupdate">
+    update seven
+	set seven =null
+	where num = 30
+    </update>
+   
+    <update id="sevenallupdate" parameterType="int">
+	update seven
+	set seven =(select seven from seven where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selectseven" resultType="int">
+     select seven
+     from seven
+  </select>
+ <!-- end Seven --> 
+ 
+ <!-- eight -->
+	<update id="eightInsert" parameterType="hashmap">
+ 	update eight
+	set eight = #{eight}
+	where num = #{num}
+    </update>
+
+	<select id="eightCount" resultType="int">
+     select count(eight)
+     from eight
+    </select>
+     
+	<insert id="eightNumInsert" parameterType="int">
+       insert into eight(num)
+       values(#{num})
+    </insert>
+    
+	<select id="eightNumCount" resultType="int">
+     select count(num)
+     from eight
+    </select>
+    
+    <update id="eightoneupdate">
+    update eight
+	set eight =null
+	where num = 30
+    </update>
+   
+    <update id="eightallupdate" parameterType="int">
+	update eight
+	set eight =(select eight from eight where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selecteight" resultType="int">
+     select eight
+     from eight
+  </select>
+ <!-- end Eight --> 
+ 
+ <!-- Nine -->
+<update id="nineInsert" parameterType="hashmap">
+ 	update nine
+	set nine = #{nine}
+	where num = #{num}
+    </update>
+
+	<select id="nineCount" resultType="int">
+     select count(nine)
+     from nine
+    </select>
+     
+	<insert id="nineNumInsert" parameterType="int">
+       insert into nine(num)
+       values(#{num})
+    </insert>
+    
+	<select id="nineNumCount" resultType="int">
+     select count(num)
+     from nine
+    </select>
+    
+    <update id="nineoneupdate">
+    update nine
+	set nine =null
+	where num = 30
+    </update>
+   
+    <update id="nineallupdate" parameterType="int">
+	update nine
+	set nine =(select nine from nine where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selectnine" resultType="int">
+     select nine
+     from nine
+  </select>
+
+ <!-- end Nine --> 
+ 
+ <!-- Ten -->
+	<update id="tenInsert" parameterType="hashmap">
+ 	update ten
+	set ten = #{ten}
+	where num = #{num}
+    </update>
+
+	<select id="tenCount" resultType="int">
+     select count(ten)
+     from ten
+    </select>
+     
+	<insert id="tenNumInsert" parameterType="int">
+       insert into ten(num)
+       values(#{num})
+    </insert>
+    
+	<select id="tenNumCount" resultType="int">
+     select count(num)
+     from ten
+    </select>
+    
+    <update id="tenoneupdate">
+    update ten
+	set ten =null
+	where num = 30
+    </update>
+   
+    <update id="tenallupdate" parameterType="int">
+	update ten
+	set ten =(select ten from ten where num=#{num}+1)
+	where num = #{num}
+    </update>
+    
+  <select id="selectten" resultType="int">
+     select ten
+     from ten
+  </select>
+ <!-- end Ten --> 
   
 </mapper>
