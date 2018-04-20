@@ -4,6 +4,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <html>
 <head>
 	<!-- 합쳐지고 최소화된 최신 CSS -->
@@ -63,7 +64,9 @@
                <!--  <button class="btn btn-default">Login</button> -->               
                	<input type="submit" value="Login" id="Login">
                </form>
+               
             </div>
+            
         </div>
   
 </div>		  				  
@@ -72,8 +75,39 @@
 	</div>		
 
 </div>	
-<button class="button" >카카오 계정으로 로그인</button>	
-<a href="kakao">123</a>			
+<!-- <button class="button" >카카오 계정으로 로그인</button>	 -->
+<div class="kakao" align="center">
+<a id="kakao-login-btn"></a>
+</div>
+
+
+<script type='text/javascript'>
+  //<![CDATA[
+    // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    Kakao.init('6f90f09b2000f741abebc66b147ad893');
+    // 카카오 로그인 버튼을 생성합니다.
+    Kakao.Auth.createLoginButton({
+      container: '#kakao-login-btn',
+      success: function(authObj) {
+        // 로그인 성공시, API를 호출합니다.
+        Kakao.API.request({
+          url: '/v1/user/me',
+          success: function(res) {
+            alert(res.properties.nickname+'님 안녕하세요');
+            location.href="./Logins?id="+res.properties['nickname']+"&pw=9999"; 
+
+          },
+          fail: function(error) {
+            alert(JSON.stringify(error));
+          }
+        });
+      },
+      fail: function(err) {
+        alert(JSON.stringify(err));
+      }
+    });
+  //]]>
+</script>		
 
 			
 			<ul class="member">
