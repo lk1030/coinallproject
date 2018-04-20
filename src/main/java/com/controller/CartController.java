@@ -31,7 +31,20 @@ public class CartController {
 		return mav;
 	}
 	
-
+	@RequestMapping("/Bitadd")
+	public ModelAndView Bitadd(@RequestParam ("bitga") String bitga,@RequestParam ("bitsu") String bitsu,@RequestParam ("allbitga") String allbitga){
+		
+		System.out.println(bitga);
+		System.out.println(bitsu);
+		System.out.println(allbitga);
+		
+		
+		ModelAndView mav = new ModelAndView();
+		
+		mav.setViewName("chart/chart");
+		
+		return mav;
+	}
 	
 	
 	

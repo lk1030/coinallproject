@@ -5,7 +5,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
+	<!-- 합쳐지고 최소화된 최신 CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	
+	<!-- 부가적인 테마 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 <script>
 
 $(document).ready(function(){
@@ -1080,9 +1086,30 @@ $(document).ready(function(){
 	}else if(chart10!=null){
 		chart10.draw(data10, options);
 	}
-		
+
+	
 	} ,1000); //end setInterval
 
+	
+	$("#bitadd").on("click",function(){	
+		$("#bitga").text(bitcoin[29]);
+		$("#bitgah").val(bitcoin[29]);
+	 });
+	
+	$("#bitsu").on("keyup",function(){	
+
+		var allbitga = parseInt($("#bitga").text())*parseInt($("#bitsu").val())
+		
+		if(Number.isNaN(allbitga) == true){
+			$("#allbitga").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#allbitga").text(allbitga);
+			$("#allbitgah").val(allbitga);
+		}
+		
+		
+	 });
+	
 });	//end ready
 
 
@@ -1136,7 +1163,7 @@ table td{
  <th>시가총액</th>
  <th>실시간 시세</th>
  <th>변동률</th>
- <th>매수/매도</th> 
+ <th>매수</th> 
  </tr>
  
  <!-- 비트코인 -->
@@ -1145,8 +1172,11 @@ table td{
  <td><span id ="bitsum" class="bit"></span></td>
  <td><span id ="bit30" class="bit"></span> </td>
  <td><span id ="bitbyun" class="bit"></span><img id="bitimg" class="bit"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm1" id="bitadd">매수</button></td>
  </tr>
+ 
+
+	
  
   <!-- 이더리움 -->
  <tr>
@@ -1230,6 +1260,44 @@ table td{
  </tr>
  
  </table>
+ 		  	
+			 <!-- Modal -->
+			 <div class="modal fade" id="modalLoginForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">비트코인</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Bitadd" method="get">  
+                    <span id="bitga"></span>  <br>                  
+					<input type="hidden" name="bitga" id="bitgah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="bitsu" name="bitsu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="allbitga"></span> 
+					<input type="hidden" name="allbitga" id="allbitgah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	  				  
+	
+ 
  <div>
   <div id="chart_div1" class="cha"></div>
  </div>
