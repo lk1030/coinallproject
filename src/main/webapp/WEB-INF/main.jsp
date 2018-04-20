@@ -94,7 +94,26 @@
           url: '/v1/user/me',
           success: function(res) {
             alert(res.properties.nickname+'님 안녕하세요');
-            location.href="./Logins?id="+res.properties['nickname']+"&pw=9999"; 
+               
+    			$.ajax({
+    				url:"idCheck",
+    				type:"get",
+    				data:{
+    					id:res.properties.nickname
+    				},
+    				dataType:"text",
+    				success:function(responseData,ststus,xhr){	
+    					if(parseInt(responseData)==0){
+    						location.href="./UserAdd?id="+res.properties['nickname']+"&pw=9999&name=9999&ph1=999&ph2=9999&ph3=9999&addr3=9999&addr2=9999&addr1=01026&email=99&email2=daum.net&bank1=%EC%9A%B0%EB%A6%AC%EC%9D%80%ED%96%89&bank2=9999999999&bpw=9999";
+    					}else{
+    						location.href="./Logins?id="+res.properties['nickname']+"&pw=9999";
+    					}
+    				},
+    				error:function(){}			
+    			});
+        	
+            /* <input type= "button" id ="jong" value="중복체크"> */
+            /* location.href="./Logins?id="+res.properties['nickname']+"&pw=9999"; */ 
 
           },
           fail: function(error) {

@@ -27,7 +27,6 @@ public class CommentService {
 	
 	
 	public ComDTO clist(HashMap<String,String> map){
-		System.out.println(dao.clist(map));
 		return dao.clist(map);
 	}
 }
