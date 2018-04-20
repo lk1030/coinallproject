@@ -179,3 +179,19 @@ nine NUMBER(38));
 CREATE TABLE ten
 (num NUMBER(38),
 ten NUMBER(38));
+
+
+--1:1게시판
+create table oneboard
+( num NUMBER(4) CONSTRAINT oneboard_num_pk PRIMARY KEY,
+  title VARCHAR2(100) NOT NULL,
+  id VARCHAR2(10) NOT NULL,
+  content VARCHAR2(2000) NOT NULL,
+  reply VARCHAR2(2000),
+  writeday DATE DEFAULT SYSDATE,
+  situation NUMBER(4) DEFAULT 0 );
+
+create sequence oneboard_seq;
+alter table oneboard
+add 
+constraint oneboard_id_fk foreign key(id) references users(id);
