@@ -13,6 +13,7 @@
 <!------ Include the above in your HEAD tag ---------->
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<jsp:include page="include/header.jsp" flush="true" />
 <div class="container">
 	
 		<div class="row">
@@ -70,7 +71,7 @@
                             <textarea class="form-control" rows="3" name="reply">${oneread.reply}</textarea>
                         <input type="hidden" name="situation" value="1">
 <c:if test="${login.id == 'admin'}">
-<input type="submit" value="댓글쓰기"><br>
+<input type="submit" value="답변달기"><br>
 </c:if>
 </form>
                         </div>

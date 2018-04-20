@@ -32,7 +32,6 @@ public class CommentController {
 	
 	@RequestMapping(value="/writeComment" , method=RequestMethod.POST)
 	public String writeComment(CommentDTO dto) {
-		System.out.println(dto);
 		service.writeComment(dto);
 		return  "redirect:list";
 	}
@@ -51,7 +50,6 @@ public class CommentController {
 	public ComDTO clist(@RequestParam HashMap<String,String> map) {
 		
 		ComDTO comDTO = service.clist(map);
-		System.out.println(comDTO);
 		return comDTO;  // list3.jsp
 	}
 	
