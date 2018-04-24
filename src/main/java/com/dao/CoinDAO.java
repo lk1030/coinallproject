@@ -8,6 +8,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.dto.CoinaddDTO;
+
 @Repository
 public class CoinDAO {
 
@@ -312,4 +314,23 @@ public List<Integer> selectten() {
 	return template.selectList("CoinMapper.selectten");
 }
 	//end Ten
+
+// 구매코인 DB넣기
+public void coinadd(CoinaddDTO dto){
+	template.insert("CoinMapper.coinadd",dto);
+}	
+//구매시 카운터 체크
+public int coinaddCount(HashMap<String,String> map) {
+	return template.selectOne("CoinMapper.coinaddCount",map);
+}
+//같은 코인 구매시 업데이트
+public void coinaddupdate(CoinaddDTO dto){
+	template.update("CoinMapper.coinaddupdate",dto);
+}	
+//업데이트 코인 갯수 파악
+public int mycoinCount(HashMap<String,String> map) {
+	return template.selectOne("CoinMapper.mycoinCount",map);
+}
+
+
 }

@@ -180,7 +180,6 @@ CREATE TABLE ten
 (num NUMBER(38),
 ten NUMBER(38));
 
-
 --1:1게시판
 create table oneboard
 ( num NUMBER(4) CONSTRAINT oneboard_num_pk PRIMARY KEY,
@@ -195,3 +194,15 @@ create sequence oneboard_seq;
 alter table oneboard
 add 
 constraint oneboard_id_fk foreign key(id) references users(id);
+
+CREATE TABLE saves
+(id VARCHAR2(38),
+coinname VARCHAR2(38),
+mycoin VARCHAR2(38),
+days VARCHAR2(38),
+updown VARCHAR2(38)
+);
+
+alter table saves
+add 
+constraint sav_id_fk foreign key(id) references users(id);

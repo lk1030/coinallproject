@@ -406,4 +406,31 @@
   </select>
  <!-- end Ten --> 
   
+  <!-- 구매코인 db넣기 -->
+    <insert id="coinadd" parameterType="CoinaddDTO">
+   insert into saves (id,coinname,mycoin,days,updown)
+   values( #{id},#{coinname},#{mycoin},#{days},#{updown})
+  </insert>
+  
+  <!-- 구매시 카운터 체크 -->
+  <select id="coinaddCount" resultType="int" parameterType="hashmap">
+  select count(coinname)
+	from saves
+	where id=#{id} and coinname=#{coinname}
+  </select>
+  
+  <!-- 재구매시 DB변경하기 -->
+  <update id="coinaddupdate" parameterType="CoinaddDTO">
+  	update saves
+	set mycoin = #{mycoin}, days = #{days}, updown = #{updown}
+	where coinname = #{coinname}
+  </update>
+  
+  <!-- 업데이트 갯수 파악 -->
+  <select id="mycoinCount" resultType="int" parameterType="hashmap">
+    select mycoin
+	from saves
+	where id=#{id} and coinname=#{coinname}
+  </select>
+  
 </mapper>
