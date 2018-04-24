@@ -36,6 +36,8 @@
     <mvc:view-controller path="/chariecoin" view-name="chart/chariecoin"/>
     
     <mvc:view-controller path="/search" view-name="search"/>
+    
+    <mvc:view-controller path="/mailCheck" view-name="mailCheck"/>
 <!--     
     <mvc:view-controller path="/searchId" view-name="searchId"/>
      

@@ -4,6 +4,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <!-- 회원 가입 페이지 -->
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
@@ -125,9 +126,39 @@ var pwcount = 1;
     		}else if(pw!=pw2){
     			alert("비빌번호가 다릅니다.");
     		}			
-    	});  	
-    	  	
+    	}); 
+    	
+    	
+    	 var response = ""; 
+    	$(".userEmail").on("click",function(){
+    		var userEmail = document.getElementById('email').value +'@'+ document.getElementById('email2').value;
+        	console.log(userEmail);  
+        	
+        	 $.ajax({
+				url:"mailCheck",
+				type:"get",
+				data:{
+					id:$(".userEmail").val()
+				},
+				dataType:"text",
+				success:function(responseData,ststus,xhr){
+					 response = responseData; 
+					console.log(responseData);
+									},
+				error:function(){}			
+			}); 
+    	});  
+    	
+    	 $(".userEmailCheck").on("click",function(){
+    		 console.log(response, $("#mailCheck").val()); 
+    	
+    		 if($("#mailCheck").val().trim() == response.trim()) {
+    			alert("메일 인증 성공");
+    		} else {
+    			alert("다시 입력해 주세요");
+    		}    	
     });
+});   	 
 
 </script>
 
@@ -229,10 +260,28 @@ input{
 <th align="center" class="backs">이메일</th>
 <td class="backs">
 <input type="text" name = "email" id = "email">@
-    <select name = "email2">
+    <select name = "email2" id="email2">
        <option value="daum.net">daum.net</option>
        <option value="naver.com">naver.com</option>
-     </select>
+     </select>     
+     <input type="hidden" id="userEmail" >
+     <button class="userEmail">메일 보내기</button>    
+</td>
+</tr>
+
+<tr>
+<th align="center">이메일 인증</th>
+<td class="backs">
+
+<%-- <%
+	String key = request.getParameter("key");
+	response.sendRedirect("mailCheck.jsp?key");
+	
+%>  --%>
+
+
+<input type="text" name="mailCheck" id="mailCheck">
+<button class="userEmailCheck">인증 확인</button>
 </td>
 </tr>
 

@@ -289,7 +289,6 @@ public class UserController {
 			counts ="1";
 		}	
 		return counts;
-	}
-	
+	}	
 	
 }//end class
