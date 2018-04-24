@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dao.CoinDAO;
+import com.dto.CoinaddDTO;
+import com.dto.UserDTO;
 
 @Service
 public class CoinService {
@@ -359,6 +361,25 @@ public class CoinService {
 	public List<Integer> selectten() {
 		return dao.selectten();
 	}
-
 	//end Ten
+	
+	
+	//구매 코인 DB넣기
+	public void coinadd(CoinaddDTO dto){
+		dao.coinadd(dto);
+	}	
+	//구매시 카운터 체크
+	public int coinaddCount(HashMap<String,String> map) {
+		return dao.coinaddCount(map);
+	
+	}
+	//같은 코인 구매시 업데이트
+	public void coinaddupdate(CoinaddDTO dto){
+		dao.coinaddupdate(dto);
+	}
+	
+	public int mycoinCount(HashMap<String,String> map) {
+		return dao.mycoinCount(map);
+	}
+	
 }

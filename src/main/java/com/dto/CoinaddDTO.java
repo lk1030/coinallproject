@@ -8,17 +8,17 @@ public class CoinaddDTO {
 	String id;
 	String coinname;
 	String mycoin;
-	String date;
+	String days;
 	String updown;
 
 	public CoinaddDTO() {}
 
-	public CoinaddDTO(String id, String coinname, String mycoin, String date, String updown) {
+	public CoinaddDTO(String id, String coinname, String mycoin, String days, String updown) {
 		super();
 		this.id = id;
 		this.coinname = coinname;
 		this.mycoin = mycoin;
-		this.date = date;
+		this.days = days;
 		this.updown = updown;
 	}
 
@@ -46,12 +46,12 @@ public class CoinaddDTO {
 		this.mycoin = mycoin;
 	}
 
-	public String getDate() {
-		return date;
+	public String getDays() {
+		return days;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setDays(String days) {
+		this.days = days;
 	}
 
 	public String getUpdown() {
@@ -64,10 +64,11 @@ public class CoinaddDTO {
 
 	@Override
 	public String toString() {
-		return "CoinaddDTO [id=" + id + ", coinname=" + coinname + ", mycoin=" + mycoin + ", date=" + date + ", updown="
+		return "CoinaddDTO [id=" + id + ", coinname=" + coinname + ", mycoin=" + mycoin + ", days=" + days + ", updown="
 				+ updown + "]";
 	}
 
+	
 
 	
 	
