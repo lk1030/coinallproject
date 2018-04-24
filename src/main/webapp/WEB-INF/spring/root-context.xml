@@ -38,7 +38,7 @@
 <value>com.dto.CommentDTO</value>
 <value>com.dto.PrchDTO</value>
 <value>com.dto.OneBoardDTO</value>
-<!-- <value>com.dto.CoinDTO</value> -->
+<value>com.dto.CoinaddDTO</value>
 </list>
 </property>
 </bean>
