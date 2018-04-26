@@ -136,13 +136,15 @@ public class UserController {
 	}
 	
 	//로그인
-	//로그인
 	   @RequestMapping("/Logins")
 	   public ModelAndView Logins(@RequestParam HashMap<String, String> map,HttpSession session) {
 	      
 	      ModelAndView mav = new ModelAndView();
 
-	      String url;
+	     //String id = session.getAttribute("id");
+	      
+	      
+	       String url;
 	      
 	      String id = map.get("id");
 	      
