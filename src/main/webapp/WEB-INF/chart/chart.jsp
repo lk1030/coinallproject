@@ -1105,10 +1105,166 @@ $(document).ready(function(){
 		}else{
 			$("#allbitga").text(allbitga);
 			$("#allbitgah").val(allbitga);
-		}
-		
-		
+		}	
 	 });
+	
+	$("#twoadd").on("click",function(){	
+		$("#twoga").text(twocoin[29]);
+		$("#twogah").val(twocoin[29]);
+	 });
+	
+	$("#twosu").on("keyup",function(){	
+
+		var alltwoga = parseInt($("#twoga").text())*parseInt($("#twosu").val())
+		
+		if(Number.isNaN(alltwoga) == true){
+			$("#alltwoga").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#alltwoga").text(alltwoga);
+			$("#alltwogah").val(alltwoga);
+		}	
+	 });
+
+	$("#threeadd").on("click",function(){	
+		$("#threega").text(threecoin[29]);
+		$("#threegah").val(threecoin[29]);
+	 });
+	
+	$("#threesu").on("keyup",function(){	
+
+		var allthreega = parseInt($("#threega").text())*parseInt($("#threesu").val())
+		
+		if(Number.isNaN(allthreega) == true){
+			$("#allthreega").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#allthreega").text(allthreega);
+			$("#allthreegah").val(allthreega);
+		}	
+	 });
+
+	$("#fouradd").on("click",function(){	
+		$("#fourga").text(fourcoin[29]);
+		$("#fourgah").val(fourcoin[29]);
+	 });
+	
+	$("#foursu").on("keyup",function(){	
+
+		var allfourga = parseInt($("#fourga").text())*parseInt($("#foursu").val())
+		
+		if(Number.isNaN(allfourga) == true){
+			$("#allfourga").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#allfourga").text(allfourga);
+			$("#allfourgah").val(allfourga);
+		}	
+	 });
+	
+	$("#fiveadd").on("click",function(){	
+		$("#fivega").text(fivecoin[29]);
+		$("#fivegah").val(fivecoin[29]);
+	 });
+	
+	$("#fivesu").on("keyup",function(){	
+
+		var allfivega = parseInt($("#fivega").text())*parseInt($("#fivesu").val())
+		
+		if(Number.isNaN(allfivega) == true){
+			$("#allfivega").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#allfivega").text(allfivega);
+			$("#allfivegah").val(allfivega);
+		}	
+	 });
+	
+	$("#sixadd").on("click",function(){	
+		$("#sixga").text(sixcoin[29]);
+		$("#sixgah").val(sixcoin[29]);
+	 });
+	
+	$("#sixsu").on("keyup",function(){	
+
+		var allsixga = parseInt($("#sixga").text())*parseInt($("#sixsu").val())
+		
+		if(Number.isNaN(allsixga) == true){
+			$("#allsixga").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#allsixga").text(allsixga);
+			$("#allsixgah").val(allsixga);
+		}	
+	 });
+		
+	$("#sevenadd").on("click",function(){	
+		$("#sevenga").text(sevencoin[29]);
+		$("#sevengah").val(sevencoin[29]);
+	 });
+	
+	$("#sevensu").on("keyup",function(){	
+
+		var allsevenga = parseInt($("#sevenga").text())*parseInt($("#sevensu").val())
+		
+		if(Number.isNaN(allsevenga) == true){
+			$("#allsevenga").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#allsevenga").text(allsevenga);
+			$("#allsevengah").val(allsevenga);
+		}	
+	 });
+	
+
+	$("#eightadd").on("click",function(){	
+		$("#eightga").text(eightcoin[29]);
+		$("#eightgah").val(eightcoin[29]);
+	 });
+	
+	$("#eightsu").on("keyup",function(){	
+
+		var alleightga = parseInt($("#eightga").text())*parseInt($("#eightsu").val())
+		
+		if(Number.isNaN(alleightga) == true){
+			$("#alleightga").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#alleightga").text(alleightga);
+			$("#alleightgah").val(alleightga);
+		}	
+	 });
+	
+	$("#nineadd").on("click",function(){	
+		$("#ninega").text(ninecoin[29]);
+		$("#ninegah").val(ninecoin[29]);
+	 });
+	
+	$("#ninesu").on("keyup",function(){	
+
+		var allninega = parseInt($("#ninega").text())*parseInt($("#ninesu").val())
+		
+		if(Number.isNaN(allninega) == true){
+			$("#allninega").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#allninega").text(allninega);
+			$("#allninegah").val(allninega);
+		}	
+	 });
+	
+	$("#tenadd").on("click",function(){	
+		$("#tenga").text(tencoin[29]);
+		$("#tengah").val(tencoin[29]);
+	 });
+	
+	$("#tensu").on("keyup",function(){	
+
+		var alltenga = parseInt($("#tenga").text())*parseInt($("#tensu").val())
+		
+		if(Number.isNaN(alltenga) == true){
+			$("#alltenga").text("수량을 숫자로 입력하세요");
+		}else{
+			$("#alltenga").text(alltenga);
+			$("#alltengah").val(alltenga);
+		}	
+	 });
+	
+
+	
+	
 	
 });	//end ready
 
@@ -1184,7 +1340,7 @@ table td{
  <td><span id ="twosum" class="two"></span></td>
  <td><span id ="two30" class="two"></span> </td>
  <td><span id ="twobyun" class="two"></span><img id="twoimg" class="two"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm2" id="twoadd">매수</button></td>
  </tr>
  
   <!-- 리플 -->
@@ -1193,7 +1349,7 @@ table td{
  <td><span id ="threesum" class="three"></span></td>
  <td><span id ="three30" class="three"></span> </td>
  <td><span id ="threebyun" class="three"></span><img id="threeimg" class="three"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm3" id="threeadd">매수</button></td>
  </tr>
  
   <!-- 라이트코인 -->
@@ -1202,7 +1358,7 @@ table td{
  <td><span id ="foursum" class="four"></span></td>
  <td><span id ="four30" class="four"></span> </td>
  <td><span id ="fourbyun" class="four"></span><img id="fourimg" class="four"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm4" id="fouradd">매수</button></td>
  </tr>
  
   <!-- 이오스 -->
@@ -1211,7 +1367,7 @@ table td{
  <td><span id ="fivesum" class="five"></span></td>
  <td><span id ="five30" class="five"></span> </td>
  <td><span id ="fivebyun" class="five"></span><img id="fiveimg" class="five"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm5" id="fiveadd">매수</button></td>
  </tr>
  
   <!-- 모네로 -->
@@ -1220,7 +1376,7 @@ table td{
  <td><span id ="sixsum" class="six"></span></td>
  <td><span id ="six30" class="six"></span> </td>
  <td><span id ="sixbyun" class="six"></span><img id="siximg" class="six"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm6" id="sixadd">매수</button></td>
  </tr>
  
   <!-- 대시 -->
@@ -1229,7 +1385,7 @@ table td{
  <td><span id ="sevensum" class="seven"></span></td>
  <td><span id ="seven30" class="seven"></span> </td>
  <td><span id ="sevenbyun" class="seven"></span><img id="sevenimg" class="seven"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm7" id="sevenadd">매수</button></td>
  </tr>
  
   <!-- 에이다 -->
@@ -1238,7 +1394,7 @@ table td{
  <td><span id ="eightsum" class="eight"></span></td>
  <td><span id ="eight30" class="eight"></span> </td>
  <td><span id ="eightbyun" class="eight"></span><img id="eightimg" class="eight"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm8" id="eightadd">매수</button></td>
  </tr>
  
   <!-- 퀀텀 -->
@@ -1247,7 +1403,7 @@ table td{
  <td><span id ="ninesum" class="nine"></span></td>
  <td><span id ="nine30" class="nine"></span> </td>
  <td><span id ="ninebyun" class="nine"></span><img id="nineimg" class="nine"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm9" id="nineadd">매수</button></td>
  </tr>
  
   <!-- 아이콘 -->
@@ -1256,12 +1412,12 @@ table td{
  <td><span id ="tensum" class="ten"></span></td>
  <td><span id ="ten30" class="ten"></span> </td>
  <td><span id ="tenbyun" class="ten"></span><img id="tenimg" class="ten"></td>
- <td><input type="button" value="매수"><input type="button" value="매도"></td>
+ <td><button type="button" data-toggle="modal" data-target="#modalLoginForm10" id="tenadd">매수</button></td>
  </tr>
  
  </table>
  		  	
-			 <!-- Modal -->
+			 <!-- 1Bit Modal -->
 			 <div class="modal fade" id="modalLoginForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -1295,7 +1451,348 @@ table td{
        		 </div> 
 			</div>		  				  
 		</div>				
-	</div>	  				  
+	</div>	
+	<!-- end Bit Modal-->  	
+	
+				 <!-- 2 Modal -->
+			 <div class="modal fade" id="modalLoginForm2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">이더리움</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Twoadd" method="get">  
+                    <span id="twoga"></span>  <br>                  
+					<input type="hidden" name="twoga" id="twogah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="twosu" name="twosu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="alltwoga"></span> 
+					<input type="hidden" name="alltwoga" id="alltwogah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+	<!-- end Bit Modal--> 
+	
+				 <!-- 3 Modal -->
+		 <div class="modal fade" id="modalLoginForm3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">리플</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Threeadd" method="get">  
+                    <span id="threega"></span>  <br>                  
+					<input type="hidden" name="threega" id="threegah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="threesu" name="threesu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="allthreega"></span> 
+					<input type="hidden" name="allthreega" id="allthreegah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+
+	<!-- end Bit Modal--> 
+	
+				<!-- 4 Modal -->
+			 <div class="modal fade" id="modalLoginForm4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">라이트코인</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Fouradd" method="get">  
+                    <span id="fourga"></span>  <br>                  
+					<input type="hidden" name="fourga" id="fourgah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="foursu" name="foursu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="allfourga"></span> 
+					<input type="hidden" name="allfourga" id="allfourgah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+
+	<!-- end Bit Modal--> 
+	
+				 <!-- 5 Modal -->
+			 <div class="modal fade" id="modalLoginForm5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">이오스</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Fiveadd" method="get">  
+                    <span id="fivega"></span>  <br>                  
+					<input type="hidden" name="fivega" id="fivegah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="fivesu" name="fivesu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="allfivega"></span> 
+					<input type="hidden" name="allfivega" id="allfivegah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+
+	<!-- end Bit Modal--> 
+	
+				 <!-- 6 Modal -->
+			<div class="modal fade" id="modalLoginForm6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">모네로</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Sixadd" method="get">  
+                    <span id="sixga"></span>  <br>                  
+					<input type="hidden" name="sixga" id="sixgah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="sixsu" name="sixsu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="allsixga"></span> 
+					<input type="hidden" name="allsixga" id="allsixgah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+
+	<!-- end Bit Modal--> 
+	
+				 <!-- 7 Modal -->
+			 <div class="modal fade" id="modalLoginForm7" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">대시</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Sevenadd" method="get">  
+                    <span id="sevenga"></span>  <br>                  
+					<input type="hidden" name="sevenga" id="sevengah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="sevensu" name="sevensu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="allsevenga"></span> 
+					<input type="hidden" name="allsevenga" id="allsevengah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>
+	
+	<!-- end Bit Modal--> 
+				 <!-- 8 Modal -->
+			 <div class="modal fade" id="modalLoginForm8" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">에이다</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Eightadd" method="get">  
+                    <span id="eightga"></span>  <br>                  
+					<input type="hidden" name="eightga" id="eightgah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="eightsu" name="eightsu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="alleightga"></span> 
+					<input type="hidden" name="alleightga" id="alleightgah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+
+	<!-- end Bit Modal--> 
+	
+				 <!-- 9 Modal -->
+			<div class="modal fade" id="modalLoginForm9" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">퀀텀</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Nineadd" method="get">  
+                    <span id="ninega"></span>  <br>                  
+					<input type="hidden" name="ninega" id="ninegah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="ninesu" name="ninesu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="allninega"></span> 
+					<input type="hidden" name="allninega" id="allninegah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+
+	<!-- end Bit Modal--> 
+	
+				 <!-- 10 Modal -->
+			<div class="modal fade" id="modalLoginForm10" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">아이콘</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-5">
+                <div class="md-form mb-5">
+                
+                    <i class="fa fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-email">가격</label>
+                    <form action="Tenadd" method="get">  
+                    <span id="tenga"></span>  <br>                  
+					<input type="hidden" name="tenga" id="tengah"/>
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">매수량</label>
+                    <input type="text" size="10" class="form-control validate" id="tensu" name="tensu">                    
+
+                    <i class="fa fa-lock prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="defaultForm-pass">총가격</label>
+                    <span id="alltenga"></span> 
+					<input type="hidden" name="alltenga" id="alltengah"/>
+
+               	<input type="submit" value="매수" id="Login">
+               </form>
+              </div>    
+       		 </div> 
+			</div>		  				  
+		</div>				
+	</div>	
+
+	<!-- end Bit Modal--> 			  
 	
  
  <div>

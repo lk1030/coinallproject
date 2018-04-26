@@ -136,34 +136,35 @@ public class UserController {
 	}
 	
 	//로그인
-	@RequestMapping("/Logins")
-	public ModelAndView Logins(@RequestParam HashMap<String, String> map,HttpSession session) {
-		
-		ModelAndView mav = new ModelAndView();
+	//로그인
+	   @RequestMapping("/Logins")
+	   public ModelAndView Logins(@RequestParam HashMap<String, String> map,HttpSession session) {
+	      
+	      ModelAndView mav = new ModelAndView();
 
-		String url;
-		
-		String id = map.get("id");
-		
-		UserDTO dto = service.login(map);
+	      String url;
+	      
+	      String id = map.get("id");
+	      
+	      UserDTO dto = service.login(map);
 
-		if(dto!=null) {
-			int bdto = service.bankselect(id);
-			int cdto = service.cashselect(id);
-			session.setAttribute("id",id);
-			session.setAttribute("login",dto);
-			session.setAttribute("bankselect",bdto);
-			session.setAttribute("cashselect",cdto);
-			url = "forward:situationUI";
-		}else {
-			String mesg = "아이디 또는 비밀번호가 잘못 되었습니다.";
-			session.setAttribute("idpw",mesg);
-			url= "login";
-		}
-		mav.setViewName(url);
-		
-		return mav;
-	}
+	      if(dto!=null) {
+	         int bdto = service.bankselect(id);
+	         int cdto = service.cashselect(id);
+	         session.setAttribute("id",id);
+	         session.setAttribute("login",dto);
+	         session.setAttribute("bankselect",bdto);
+	         session.setAttribute("cashselect",cdto);
+	         url = "forward:situationUI";
+	      }else {
+	         String mesg = "아이디 또는 비밀번호가 잘못 되었습니다.";
+	         session.setAttribute("idpw",mesg);
+	         url= "login";
+	      }
+	      mav.setViewName(url);
+	      
+	      return mav;
+	   }
 	
 	//캐시 충전 페이지 오픈
 	@RequestMapping("/rechargeUI")

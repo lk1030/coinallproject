@@ -89,6 +89,73 @@
      where id = #{id}
   </select>	
 
+<!-- 구매코인 가져오기 -->
+  <select id="selectgubit" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+  <select id="selectgutwo" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectguthree" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectgufour" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectgufive" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectgusix" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectguseven" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectgueight" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectgunine" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+    <select id="selectguten" parameterType="hashmap" resultType="CoinaddDTO">
+select id,coinname,mycoin,days,updown
+from saves
+where coinname= #{coinname} and id = #{id}
+  </select>
+  
+  <!-- 총 보유 코인 파악 -->
+   <select id="selectidcoin" parameterType="string" resultType="int">
+	select count(coinname)
+	from saves
+	where id = #{id}
+	</select>
 
 
 </mapper>
