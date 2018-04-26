@@ -21,6 +21,38 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>COINALL</title>
 <style>
+	.member {
+		margin-top:20px;
+		padding: 0;
+		text-align: -webkit-center;
+		color: #10304b;	
+		font-size: 10px;
+	}
+	
+	.member li{
+		list-style: none;
+		display: inline-block;
+		margin-bottom: 30px;			
+	} 
+	
+	.member li:nth-last-child(1){
+		padding-left: 20px;		
+	}
+	 
+	.notice {					
+		margin: 30px;
+		padding-botton: 30px;
+		text-align: center;
+		font-weight: 500;
+	}
+	.notice a {		
+		font-size: 1.1em;
+		color: #153b5b;
+		/* font-weight: bold; */
+		margin: 20px 0 important;
+	}
+	
+
 	
 </style>
 
@@ -133,11 +165,4 @@
 				<li><jsp:include page="include/MemberUI.jsp" flush="true"></jsp:include></li>
 				<li><jsp:include page="include/searchUI.jsp" flush="true"></jsp:include></li>
 			</ul>
-	
-	<div class="notice">
-		<p>[공지] 이용약관 개정안내 — 더 보기</p>
-	</div>
-
-
-
 </body>
