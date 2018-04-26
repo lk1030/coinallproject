@@ -19,7 +19,22 @@
 </head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>COINALL</title>
+
+<script type="text/javascript">
+
+	/* $(document).ready(function(){
+		 $(".navbar-brand").click(function(){ 
+			 location.href="loginMain.jsp";
+		 });
+	}); */
+</script>		
+
 <style>
+
+.dropdown-menu>li>a:hover{
+ 	background-color: red;
+	width: 100%;
+}
 
 
 </style>
@@ -37,7 +52,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="main.jsp">CoinAll</a>
+      <a class="navbar-brand" href="loginMain">CoinAll</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

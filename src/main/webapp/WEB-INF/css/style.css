@@ -60,33 +60,32 @@ ul{
 		color: #ffffff;
 	}
 	
-	.member {
-		margin:0;
+	/* .member {
+		margin-top:20px;
 		padding: 0;
-		text-align: center;
+		text-align: -webkit-center;
 		color: #10304b;	
 		font-size: 10px;
-	}
+	} */
 	
-	.member li{
+	/* .member li{
 		list-style: none;
 		display: inline-block;
-		/* margin-right: 20px;  */
 		margin-bottom: 30px;			
-	}
+	} */
 	.member li a{
 		color: #10304b;	
 		font-size: 1.5em;
 	}
 
-	.notice {			
+	/* .notice {			
 		border-bottom: 1px solid #5b5f66;
 		margin: auto;
 	}
-	.notice p {
-		padding: 10px 0;
+	.notice a {
+		margin: 20px 0 important;
 	}
-	
+	 */
 	
 	body {margin: 0;}
 

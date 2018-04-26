@@ -51,6 +51,7 @@
 	
 	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />
 	<mvc:resources location="/WEB-INF/css/" mapping="/css/**" />
+    <mvc:resources location="/WEB-INF/js/" mapping="/js/**" />
     
     <mvc:view-controller path="/kakao" view-name="kakao"/>
     <mvc:view-controller path="/list" view-name="list"/>
@@ -58,6 +59,7 @@
 	<mvc:view-controller path="/clist" view-name="clist"/>
 	<mvc:view-controller path="/writeUI" view-name="write"/>
 	<mvc:view-controller path="/onewriteUI" view-name="onewrite"/>
+	<mvc:view-controller path="/loginMain" view-name="/loginMain"/>
 	
 	
 	<mvc:resources location="/WEB-INF/img/" mapping="/img/**" />

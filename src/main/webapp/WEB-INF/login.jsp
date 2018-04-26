@@ -20,21 +20,21 @@ h1{
 }
 
 .wrap {
-	width: 0;
-	height: 0;
-	background-image: none;
+	/* width: 0; */
+	height: 50% !important;
+	background: none !important;
 	border : 1px #9f9fa0 solid;
-	padding: 0 0 0 80px;
-	width: 500px;
+	padding: 100px 0 0 80px;
+	width: 40% !important;
 	margin: 100px auto;
-	border-radius: 4px;
+	/* border-radius: 4px; */
 }
 
 	input[type=text] {
 	    width: 80%;
 	    padding: 12px 20px;
 	    margin: 8px auto;
-	    border-radius: 2px;
+	   /*  border-radius: 2px; */
 	    box-sizing: border-box;	  	     
 	   
 	}
@@ -43,7 +43,7 @@ h1{
 	    width: 80%;
 	    padding: 12px 20px;
 	    margin: 8px auto;
-	    border-radius: 2px;
+	    /* border-radius: 2px; */
 	    box-sizing: border-box;	  	     
 	   
 	}
@@ -53,14 +53,15 @@ h1{
 	 	padding: 12px 20px;
 	    margin: 4px auto;
 	    box-sizing: border-box;	 
-	    border-radius: 2px; 
+	   /*  border-radius: 2px;  */
 		background-color: #2f4a77;
 		color: #ffffff;
 	}
 	p{
 		text-align: right; 
-		margin-right: 20px;
+		padding-right: 20px;
 		display:inline-block;
+		color: #153b5b !important;		
 	}
 	
 
@@ -77,8 +78,8 @@ h1{
 	  	<input type="submit" value="Login">			
 	</form>	
 	
-	<p><jsp:include page="include/searchUI.jsp" flush="true"></jsp:include></p>
-	<p><jsp:include page="include/MemberUI.jsp" flush="true"></jsp:include></p>		
+	<p><jsp:include page="include/MemberUI.jsp" flush="true"></jsp:include></p>
+	<p><jsp:include page="include/searchUI.jsp" flush="true"></jsp:include></p>			
 	</div>
 		
 		
