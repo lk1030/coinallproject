@@ -34,14 +34,16 @@
 <c:set value="${nine.updown}" var="nineupdown" ></c:set>
 <c:set value="${ten.updown}" var="tenupdown" ></c:set>
 
-
-
+<c:set value="${id}" var="userid" ></c:set>
 
 
 <script>
 
 $(document).ready(function(){
+	
+	myStorage = localStorage;
 
+	localStorage.setItem('id',"${userid}");
 
 	var bitbyun = 0;
 	var twobyun = 0;

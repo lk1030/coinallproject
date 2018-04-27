@@ -143,7 +143,7 @@ var pwcount = 1;
 				dataType:"text",
 				success:function(responseData,ststus,xhr){
 					 response = responseData; 
-					console.log(responseData);
+					console.log(response);
 									},
 				error:function(){}			
 			}); 
