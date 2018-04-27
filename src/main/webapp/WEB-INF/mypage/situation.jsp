@@ -34,14 +34,16 @@
 <c:set value="${nine.updown}" var="nineupdown" ></c:set>
 <c:set value="${ten.updown}" var="tenupdown" ></c:set>
 
-
-
-
+<c:set value="${id}" var="userid" ></c:set>
 
 <script>
 
 $(document).ready(function(){
 
+	myStorage = localStorage;
+
+	localStorage.setItem('id',"${userid}");
+	
 
 	var bitbyun = 0;
 	var twobyun = 0;
@@ -77,7 +79,7 @@ $(document).ready(function(){
 	      		
 	        		$(".1").text(parseInt(data[29]));
 	        		
-		        	bitbyun = parseInt(data[29])-parseInt(${bitupdown});
+		        	bitbyun = parseInt(data[29])-parseInt("${bitupdown}");
 		        	if(parseInt(bitbyun) < 0 ){
 		        		$(".11").text(bitbyun+" ("+(bitbyun*0.001).toFixed(2)+"% )").css("color","blue");
 		                $("#11").attr({
@@ -90,7 +92,7 @@ $(document).ready(function(){
 		                });
 		        	}
 		        	
-		        	bitsum = parseInt(data[29])*parseInt(${bit.mycoin});
+		        	bitsum = parseInt(data[29])*${bit.mycoin};
 		        	$(".31").text(bitsum);
 	        		
 	        }, //end success
@@ -110,7 +112,7 @@ $(document).ready(function(){
  		
 		        $(".2").text(parseInt(data[29]));
 		        
-		        twobyun  = parseInt(data[29])-parseInt(${twoupdown});
+		        twobyun  = parseInt(data[29])-${twoupdown};
 	        	if(parseInt(twobyun) < 0 ){
 	        		$(".12").text(twobyun +" ("+(twobyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#12").attr({
@@ -123,7 +125,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	 twosum = parseInt(data[29])*parseInt(${two.mycoin});
+	        	 twosum = parseInt(data[29])*${two.mycoin};
 	        	$(".32").text(twosum);
 					
 	        }, //end success
@@ -143,7 +145,7 @@ $(document).ready(function(){
 	
 	        	$(".3").text(parseInt(data[29]));
 	        	
-	        	threebyun = parseInt(data[29])-parseInt(${threeupdown});
+	        	threebyun = parseInt(data[29])-${threeupdown};
 	        	if(parseInt(threebyun) < 0 ){
 	        		$(".13").text(threebyun+" ("+(threebyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#13").attr({
@@ -156,7 +158,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	threesum = parseInt(data[29])*parseInt(${three.mycoin});
+	        	threesum = parseInt(data[29])*${three.mycoin};
 	        	$(".33").text(threesum);
 	        	
 	        }, //end success
@@ -176,7 +178,7 @@ $(document).ready(function(){
 	        	
 	        	$(".4").text(parseInt(data[29]));
 	        	
-	        	fourbyun = parseInt(data[29])-parseInt(${fourupdown});
+	        	fourbyun = parseInt(data[29])-${fourupdown};
 	        	if(parseInt(fourbyun) < 0 ){
 	        		$(".14").text(fourbyun+" ("+(fourbyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#14").attr({
@@ -189,7 +191,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	foursum = parseInt(data[29])*parseInt(${four.mycoin});
+	        	foursum = parseInt(data[29])*${four.mycoin};
 	        	$(".34").text(foursum);
 	        	
 	        }, //end success
@@ -209,9 +211,9 @@ $(document).ready(function(){
 	        	
 	        	$(".5").text(parseInt(data[29]));
 	        	
-	        	fivebyun = parseInt(data[29])-parseInt(${fiveupdown});
+	        	fivebyun = parseInt(data[29])-${fiveupdown};
 	        	if(parseInt(fivebyun) < 0 ){
-	        		$(".15").text(fivebyun+" ("+(fivebyun*0.001).fivebyun(2)+"% )").css("color","blue");
+	        		$(".15").text(fivebyun+" ("+(fivebyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#15").attr({
 	                     src:"img/down.jpg"
 	                });
@@ -222,7 +224,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	fivesum = parseInt(data[29])*parseInt(${five.mycoin});
+	        	fivesum = parseInt(data[29])*${five.mycoin};
 	        	$(".35").text(fivesum);
 	        	
 	        }, //end success
@@ -242,7 +244,7 @@ $(document).ready(function(){
 	        	
 	        	$(".6").text(parseInt(data[29]));
 	        	
-	        	sixbyun  = parseInt(data[29])-parseInt(${sixupdown});
+	        	sixbyun  = parseInt(data[29])-parseInt("${sixupdown}");
 	        	if(parseInt(sixbyun) < 0 ){
 	        		$(".16").text(sixbyun +" ("+(sixbyun *0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#16").attr({
@@ -255,7 +257,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	sixsum = parseInt(data[29])*parseInt(${six.mycoin});
+	        	sixsum = parseInt(data[29])*parseInt("${six.mycoin}");
 	        	$(".36").text(sixsum);
 	        	
 	        }, //end success
@@ -275,7 +277,7 @@ $(document).ready(function(){
 	        	
 	        	$(".7").text(parseInt(data[29]));
 	        	
-	        	sevenbyun = parseInt(data[29])-parseInt(${sevenupdown});
+	        	sevenbyun = parseInt(data[29])-${sevenupdown};
 	        	if(parseInt(sevenbyun) < 0 ){
 	        		$(".17").text(sevenbyun+" ("+(sevenbyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#17").attr({
@@ -288,7 +290,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	sevensum = parseInt(data[29])*parseInt(${seven.mycoin});
+	        	sevensum = parseInt(data[29])*${seven.mycoin};
 	        	$(".37").text(sevensum);
 	        	
 	        }, //end success
@@ -308,7 +310,7 @@ $(document).ready(function(){
 	        	
 	        	$(".8").text(parseInt(data[29]));
 	        	
-	        	eightbyun = parseInt(data[29])-parseInt(${eightupdown});
+	        	eightbyun = parseInt(data[29])-${eightupdown};
 	        	if(parseInt(eightbyun) < 0 ){
 	        		$(".18").text(eightbyun+" ("+(eightbyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#18").attr({
@@ -321,7 +323,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	eightsum = parseInt(data[29])*parseInt(${eight.mycoin});
+	        	eightsum = parseInt(data[29])*${eight.mycoin};
 	        	$(".38").text(eightsum);
 	        	
 	        }, //end success
@@ -341,7 +343,7 @@ $(document).ready(function(){
 	        	
 	        	$(".9").text(parseInt(data[29]));
 	        	
-	        	ninebyun = parseInt(data[29])-parseInt(${nineupdown});
+	        	ninebyun = parseInt(data[29])-${nineupdown};
 	        	if(parseInt(ninebyun) < 0 ){
 	        		$(".19").text(ninebyun+" ("+(ninebyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#19").attr({
@@ -354,7 +356,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	ninesum = parseInt(data[29])*parseInt(${nine.mycoin});
+	        	ninesum = parseInt(data[29])*${nine.mycoin};
 	        	$(".39").text(ninesum);
 	        	
 	        }, //end success
@@ -374,7 +376,7 @@ $(document).ready(function(){
 	        	
 	        	$(".10").text(parseInt(data[29]));
 	        	
-	        	tenbyun = parseInt(data[29])-parseInt(${tenupdown});
+	        	tenbyun = parseInt(data[29])-${tenupdown};
 	        	if(parseInt(tenbyun) < 0 ){
 	        		$(".20").text(tenbyun+" ("+(tenbyun*0.001).toFixed(2)+"% )").css("color","blue");
 	                $("#20").attr({
@@ -387,7 +389,7 @@ $(document).ready(function(){
 	                });
 	        	}
 	        	
-	        	tensum = parseInt(data[29])*parseInt(${ten.mycoin});
+	        	tensum = parseInt(data[29])*${ten.mycoin};
 	        	$(".40").text(tensum);
 	        	
 	        }, //end success
@@ -445,6 +447,8 @@ buttion{
 현재 충전 잔액 : ${cashselect}<br><!-- 지금 잔액을 표시 -->
 
 현재 매수 코인 현황
+
+<input type="hidden" id ="userid" value="${id}">
 
 <table>
 <tr>

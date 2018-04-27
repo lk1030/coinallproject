@@ -20,14 +20,14 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /***/ "./src/app/app.component.css":
 /***/ (function(module, exports) {
 
-module.exports = "*{\r\n    margin: 0;\r\n    padding: 0;\r\n}\r\n.wrap {\t\t\t\t\r\n    width: 100%;\r\n    height: 100%;\r\n    padding-top: 10px;    \r\n    background-size: cover;\r\n    color: #606060;\r\n    text-align: center;\r\n    background-image: none;\r\n}\r\n.border {\r\n    width: 400px;\r\n    height: 400px;\r\n    background-color: #fcefc4;\r\n    border: 2px solid #606060;\r\n    margin: 100px auto;     \r\n}\r\n.content {\t\t\r\n    margin: auto;    \r\n}"
+module.exports = ""
 
 /***/ }),
 
 /***/ "./src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrap\">\n<div class=\"border\">\n  <div class=\"content\">\n    <h1 class=\"title\">Coinall</h1>\n    <p class=\"text\"> 님<br>\n    환영합니다!</p>\n    \n        <button type=\"button\" class=\"button\" data-toggle=\"modal\" data-target=\"#modalLoginForm\">로그인</button>\n        \n        <div class=\"notice\">\n            <a href=\"\">[공지] 이용약관 개정안내 — 더 보기</a>\n        </div>\n\n</div>\t\n</div>"
+module.exports = "<div class=\"wrap\">\n    <div class=\"border\">\n      <div class=\"content\">\n        <h1 class=\"title\">Coinall</h1>\n        <p class=\"text\">{{id}} 님<br>\n        환영합니다!</p>\n        \n                    <div class=\"notice\">\n                <a href=\"\">[공지] 이용약관 개정안내 — 더 보기</a>\n            </div>\n    \n    </div>\t\n    </div>\n\n"
 
 /***/ }),
 
@@ -37,22 +37,31 @@ module.exports = "<div class=\"wrap\">\n<div class=\"border\">\n  <div class=\"c
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__wow_service__ = __webpack_require__("./src/app/wow.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(service) {
+        this.service = service;
+        this.id = null;
+        this.id = this.service.login();
     }
     AppComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'app-root',
             template: __webpack_require__("./src/app/app.component.html"),
             styles: [__webpack_require__("./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__wow_service__["a" /* WowService */]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -69,12 +78,14 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("./node_modules/@angular/platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("./src/app/app.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__wow_service__ = __webpack_require__("./src/app/wow.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -89,10 +100,46 @@ var AppModule = /** @class */ (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */]
             ],
+            providers: [__WEBPACK_IMPORTED_MODULE_3__wow_service__["a" /* WowService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/wow.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WowService; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var WowService = /** @class */ (function () {
+    function WowService() {
+        //localStorage.setItem('id',"aa");
+    }
+    WowService.prototype.login = function () {
+        console.log(localStorage.getItem('id'));
+        return localStorage.getItem('id');
+    };
+    WowService = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["w" /* Injectable */])(),
+        __metadata("design:paramtypes", [])
+    ], WowService);
+    return WowService;
 }());
 
 
