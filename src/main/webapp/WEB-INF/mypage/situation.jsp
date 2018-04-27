@@ -35,15 +35,25 @@
 <c:set value="${ten.updown}" var="tenupdown" ></c:set>
 
 <c:set value="${id}" var="userid" ></c:set>
+<<<<<<< HEAD
+
+=======
+>>>>>>> branch 'master' of https://github.com/lk1030/coinallproject.git
 
 <script>
 
 $(document).ready(function(){
+	
+	myStorage = localStorage;
 
+<<<<<<< HEAD
+	localStorage.setItem('id',"${userid}");
+=======
 	myStorage = localStorage;
 
 	localStorage.setItem('id',"${userid}");
 	
+>>>>>>> branch 'master' of https://github.com/lk1030/coinallproject.git
 
 	var bitbyun = 0;
 	var twobyun = 0;
