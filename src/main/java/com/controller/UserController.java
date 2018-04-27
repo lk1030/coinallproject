@@ -140,10 +140,7 @@ public class UserController {
 	   public ModelAndView Logins(@RequestParam HashMap<String, String> map,HttpSession session) {
 	      
 	      ModelAndView mav = new ModelAndView();
-
-	     //String id = session.getAttribute("id");
-	      
-	      
+    
 	       String url;
 	      
 	      String id = map.get("id");

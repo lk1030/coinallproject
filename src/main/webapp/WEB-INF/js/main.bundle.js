@@ -52,6 +52,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var AppComponent = /** @class */ (function () {
     function AppComponent(service) {
         this.service = service;
+<<<<<<< HEAD
+=======
+        this.id = null;
+>>>>>>> branch 'master' of https://github.com/lk1030/coinallproject.git
         this.id = this.service.login();
     }
     AppComponent = __decorate([
