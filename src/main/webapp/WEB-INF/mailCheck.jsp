@@ -15,7 +15,14 @@
 <%@ page import="javax.mail.Authenticator"%>
 <%@ page import="java.util.Properties"%>
 <%@ page import="com.controller.TempKey"%>
+<<<<<<< HEAD
 	
+=======
+
+
+
+	<%-- <%= request.getp %> --%>
+>>>>>>> branch 'master' of https://github.com/lk1030/coinallproject.git
 	
 	<%	
 	
