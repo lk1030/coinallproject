@@ -22,18 +22,18 @@
 	
 	<%	
 	
+	//인증키를 생성, 리턴하는 클래스를 호출
 	TempKey temp = new TempKey();
+	
+	//클래스 호출 시 키의 사이즈와 소문자 옵션을 활성화 시킨다.
 	String key = temp.getKey(6, true);		
 	
-	/* response.sendRedirect("mypage/recruitment.jsp"+key);
-	System.out.println(key); */
-	
-	String host = "smtp.naver.com";
-    String subject = "네이버를 이용한 메일발송";
+	String host = "smtp.naver.com"; //호스트 주소
+    String subject = "네이버를 이용한 메일발송"; //메일 제목
     String from = "wheksql89@naver.com"; //보내는 메일
-    String fromName = "Test";
-    String to = "wheksql89@naver.com";
-    String content = "네이버를 이용한 메일 발송 Test입니다. 감사합니다."+ key;
+    String fromName = "Test"; //보내는 사람
+    String to = "wheksql89@naver.com"; //받는 사람
+    String content = "네이버를 이용한 메일 발송 Test입니다. 감사합니다."+ key;//메일 내용
 
    try{
      //프로퍼티 값 인스턴스 생성과 기본세션(SMTP 서버 호스트 지정)
@@ -51,7 +51,7 @@
      props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
      props.put("mail.smtp.socketFactory.fallback", "false");
 
-
+	//SendMail클래스를 호출하여 메일을 보낼 ID,PW를 얻는다.
      Authenticator auth = new SendMail();
      Session mailSession = Session.getDefaultInstance(props,auth);
    
@@ -78,4 +78,5 @@
     
 
 	%>
+<!--해당 인증번호를 생성한 값을 리턴한다.-->
 <%=key %>

@@ -64,6 +64,7 @@
 			<artifactId>log4j</artifactId>
 			<version>1.2.15</version>
 			<exclusions>
+			<!-- 라이브러리 추가 -->
 				<exclusion>
 					<groupId>javax.mail</groupId>
 					<artifactId>mail</artifactId>

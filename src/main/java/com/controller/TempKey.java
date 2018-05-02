@@ -6,6 +6,7 @@ public class TempKey {
     private boolean lowerCheck;
     private int size;
 
+    //키의 사이즈값과, 키의 옵션을 선택할 수 있다.
     public String getKey(int size, boolean lowerCheck) {
         this.size = size;
         this.lowerCheck = lowerCheck;
@@ -24,6 +25,7 @@ public class TempKey {
                 continue;
             }
         } while (sb.length() < size);
+        //키값을 문자열로 변경하며 소문자로 변경한다.
         if(lowerCheck) {
             return sb.toString().toLowerCase();
         }
