@@ -185,6 +185,30 @@ td {
                         </tbody>
                         <!--Table body-->
                     </table>
+<div id="write">
+<a href="writeUI">글쓰기</a>
+</div>
+
+
+<c:set var="pageDTO" value="${pageDTO}" />
+<c:set var="curPage" value="${pageDTO.curPage}" />
+<c:set var="perPage" value="${pageDTO.perPage}" />
+<c:set var="totalCount" value="${pageDTO.totalCount}" />
+<c:set var="pageNum" value="${totalCount/perPage}" />
+ <c:if test="${totalCount%perPage !=0}">
+    <c:set var="pageNum" value="${pageNum+1}" />
+ </c:if>
+<c:set var="searchName" value="${pageDTO.searchName}" />
+<c:set var="searchValue" value="${pageDTO.searchValue}" />
+<%-- <c:forEach var="i" begin="1" end="${pageNum}" varStatus="status">
+    <c:if test="${curPage == (status.index)}">
+      ${status.index}&nbsp;&nbsp;
+    </c:if>
+    <c:if test="${curPage != (status.index)}">
+    <a href="list?curPage=${status.index}&searchName=${searchName}&searchValue=${searchValue}">${status.index}</a>&nbsp;&nbsp;
+    </c:if>
+</c:forEach> --%>
+
                     <!--Bottom Table UI-->
                     <div class="d-flex justify-content-center">
                         <!--Pagination -->
@@ -192,30 +216,48 @@ td {
                         <center>
                             <ul class="pagination pagination-circle pg-blue mb-0">
                                 <!--First-->
-                                <li class="page-item disabled clearfix d-none d-md-block"><a class="page-link">First</a></li>
+                                <li class="page-item"><a class="page-link" href="list?curPage=1&searchName=${searchName}&searchValue=${searchValue}">First</a></li>
                                 <!--Arrow left-->
-                                <li class="page-item disabled">
+                                <!-- <li class="page-item disabled">
                                     <a class="page-link" aria-label="Previous">
                                             <span aria-hidden="true">«</span>
                                             <span class="sr-only">Previous</span>
                                         </a>
-                                </li>
+                                </li> -->
                                 <!--Numbers-->
-                                <li class="page-item active"><a class="page-link">1</a></li>
+                                
+    <c:forEach var="i" begin="1" end="${pageNum}" varStatus="status">
+    <c:if test="${curPage == (status.index)}">
+     <li class="page-item"><a class="page-link">${status.index}</a></li> &nbsp;&nbsp;
+    </c:if>
+    <c:if test="${curPage != (status.index)}">
+    <a href="list?curPage=${status.index}&searchName=${searchName}&searchValue=${searchValue}">${status.index}</a>&nbsp;&nbsp;
+    </c:if>
+                                
+                               <!--  <li class="page-item active"><a class="page-link">1</a></li>
                                 <li class="page-item"><a class="page-link">2</a></li>
                                 <li class="page-item"><a class="page-link">3</a></li>
                                 <li class="page-item"><a class="page-link">4</a></li>
-                                <li class="page-item"><a class="page-link">5</a></li>
+                                <li class="page-item"><a class="page-link">5</a></li> -->
+                  
+                  
+                               
+                                
+                                </c:forEach> 
                                 <!--Arrow right-->
-                                <li class="page-item">
+                                <!-- <li class="page-item">
                                     <a class="page-link" aria-label="Next">
                                             <span aria-hidden="true">»</span>
                                             <span class="sr-only">Next</span>
                                         </a>
-                                </li>
+                                </li> -->
                                 <!--First-->
-                                <li class="page-item clearfix d-none d-md-block"><a class="page-link">Last</a></li>
+                                <li class="page-item"><a class="page-link" href="list?curPage=${Math.round(Math.floor(pageNum))}&searchName=${searchName}&searchValue=${searchValue}">Last</a></li>
+                                
                             </ul>
+                            
+                            
+                            
                             </center>
                         </nav>
                         <!--/Pagination -->
