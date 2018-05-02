@@ -15,15 +15,17 @@
 <%@ page import="javax.mail.Authenticator"%>
 <%@ page import="java.util.Properties"%>
 <%@ page import="com.controller.TempKey"%>
-
-
-
 	
 	
 	<%	
 	
 	TempKey temp = new TempKey();
 	String key = temp.getKey(6, true);		
+	
+	String userEmail =request.getParameter("userEmail");
+	//System.out.println(userEmail);
+	
+	
 	
 	/* response.sendRedirect("mypage/recruitment.jsp"+key);
 	System.out.println(key); */
@@ -32,7 +34,7 @@
     String subject = "네이버를 이용한 메일발송";
     String from = "wheksql89@naver.com"; //보내는 메일
     String fromName = "Test";
-    String to = "wheksql89@naver.com";
+    String to = userEmail;
     String content = "네이버를 이용한 메일 발송 Test입니다. 감사합니다."+ key;
 
    try{
@@ -78,4 +80,4 @@
     
 
 	%>
-<%=key %>
+<%= userEmail %>

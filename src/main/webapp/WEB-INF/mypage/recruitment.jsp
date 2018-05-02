@@ -131,15 +131,18 @@ var pwcount = 1;
     	
     	 var response = ""; 
     	$(".userEmail").on("click",function(){
-    		var userEmail = document.getElementById('email').value +'@'+ document.getElementById('email2').value;
+    		var userEmail = document.getElementById('email').value +'@'+ document.getElementById('email2').value;  		
         	console.log(userEmail);  
         	
         	 $.ajax({
 				url:"mailCheck",
 				type:"get",
 				data:{
-					id:$(".userEmail").val()
+					"userEmail":userEmail
+					/* id:$("email").val()+'@'+ $("email2").val() */
+					/* id:$("email").val()+'@'+ $("email2").val()	 */						
 				},
+				
 				dataType:"text",
 				success:function(responseData,ststus,xhr){
 					 response = responseData; 
@@ -158,9 +161,9 @@ var pwcount = 1;
     			alert("다시 입력해 주세요");
     		}    	
     });
-});   	 
-
+});   
 </script>
+
 
 <style>
 
